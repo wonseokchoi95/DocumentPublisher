@@ -1,0 +1,160 @@
+﻿<Window x:Class="DocumentPublisher.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:DocumentPublisher"
+        mc:Ignorable="d"
+        Title="MainWindow" 
+        Height="358" 
+        Width="615.5">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="168"/>
+            <RowDefinition Height="251"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="455"/>
+            <ColumnDefinition Width="286"/>
+        </Grid.ColumnDefinitions>
+        <Button x:Name="button_Delete" 
+                Content="Delete" 
+                VerticalAlignment="Top"
+                HorizontalAlignment="Right"
+                Margin="105,10,269,0" 
+                Click="Delete_Click" 
+                Height="20"
+                Width="81"
+                RenderTransformOrigin="2.794,0.567" 
+                Grid.Column="0"
+                Grid.ColumnSpan="1" 
+                Grid.Row="1"/>
+        <Button x:Name="button_Add" 
+                Content="Add" 
+                VerticalAlignment="Top"
+                Margin="0,10,355,0" 
+                Click="Add_Click" 
+                Height="20" 
+                HorizontalAlignment="Right" 
+                Width="81" 
+                Grid.Row="1"/>
+        <ListView x:Name="listView_documents" 
+                  Loaded="DocumentListViewer_Loaded" 
+                  Margin="19,34,12,0">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn Header="파일 이름" 
+                                    Width="Auto">
+                    </GridViewColumn>
+                    <GridViewColumn Header="파일 경로" 
+                                    Width="Auto">
+                    </GridViewColumn>
+                </GridView>
+            </ListView.View>
+        </ListView>
+
+        <TextBlock x:Name="textBlock_outputDirectory" 
+                   TextWrapping="Wrap" 
+                   Text="Output Directory:" 
+                   VerticalAlignment="Top" 
+                   Margin="16,66,312,0" Height="16" Grid.Row="1" />
+        <TextBlock x:Name="textBlock_OutputFileName" 
+                   HorizontalAlignment="Left" 
+                   TextWrapping="Wrap" 
+                   Text="Output File Name:" 
+                   VerticalAlignment="Top" 
+                   Margin="16,94,0,0" 
+                   Height="18" 
+                   Width="127" 
+                   Grid.Row="1"/>
+        <Button x:Name="button_Compile" 
+                Content="Complie" 
+                VerticalAlignment="Top" 
+                Margin="52,116,0,0" 
+                Click="CompileButton_Click" 
+                HorizontalAlignment="Left" 
+                Width="75" 
+                Height="20" 
+                Grid.Column="1"
+                Grid.ColumnSpan="1"
+                Grid.Row="1"
+                Grid.RowSpan="1" RenderTransformOrigin="0.82,1.625"/>
+        <Button x:Name="button_SearchOutputDirectory" 
+                Content="Search" 
+                VerticalAlignment="Top" 
+                Margin="52,66,0,0" 
+                Click="SearchOutputDirectory_Click" 
+                HorizontalAlignment="Left" 
+                Grid.Column="1"
+                Grid.ColumnSpan="1"
+                Grid.Row="1"
+                Width="75"/>
+        <Button x:Name="button_Edit" 
+                Content="Edit" 
+                VerticalAlignment="Top" 
+                Margin="52,92,0,0" 
+                Click="CompileButton_Click" 
+                HorizontalAlignment="Left" 
+                Width="75" 
+                Height="20" 
+                Grid.Column="1"
+                Grid.ColumnSpan="1"
+                Grid.Row="1"
+                />
+        <TextBox x:Name="textBox_OutputFileName" 
+                 HorizontalAlignment="Left" 
+                 Height="23" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Width="317" 
+                 Margin="126,92,0,0" 
+                 Grid.Column="0"
+                 Grid.ColumnSpan="1" Grid.Row="1"
+                 />
+        <TextBox x:Name="textBox_OutputDirectory" 
+                 Height="23" 
+                 TextWrapping="Wrap" 
+                 VerticalAlignment="Top" 
+                 Margin="126,66,0,0" 
+                 Grid.Column="0"
+                 Grid.ColumnSpan="1"
+                 HorizontalAlignment="Left" 
+                 Width="317" Grid.Row="1"/>
+        <Menu x:Name="menu" HorizontalAlignment="Left" Height="19" VerticalAlignment="Top" Width="794" Grid.ColumnSpan="3" Margin="0,0,-2,0" Background="WhiteSmoke">
+            <MenuItem Header="File">
+                <MenuItem Header="New Workspace"></MenuItem>
+                <MenuItem Header="Open Workspace"></MenuItem>
+                <Separator/>
+                <MenuItem Header="Import File" Click="MenuItem_Add_Document_Click"/>
+                <Separator/>
+                <MenuItem Header="Save Workspace" Click="MenuItem_Save_Workspace_Click"/>
+                <MenuItem Header="Save as..." Click="MenuItem_Save_as_Click"/>
+                <MenuItem Header="Exit" Click="MenuItem_Exit_Click"/>
+            </MenuItem>
+        </Menu>
+        <TextBlock x:Name="textBlock_ImageSourceDirectory" 
+            TextWrapping="Wrap" 
+            Text="Image Source:" 
+            VerticalAlignment="Top" 
+            Margin="16,44,312,0" Height="16" Grid.Row="1" />
+        <Button x:Name="button_SearchImageSource" 
+            Content="Search" 
+            VerticalAlignment="Top" 
+            Margin="52,44,0,0" 
+            Click="SearchImageSource_Click" 
+            HorizontalAlignment="Left" 
+            Grid.Column="1"
+            Grid.ColumnSpan="1"
+            Grid.Row="1"
+            Width="75"/>
+        <TextBox x:Name="textBox_ImageSourceDirectory" 
+            Height="23" 
+            TextWrapping="Wrap" 
+            VerticalAlignment="Top" 
+            Margin="126,44,0,0" 
+            Grid.Column="0"
+            Grid.ColumnSpan="1"
+            HorizontalAlignment="Left" 
+            Width="317" Grid.Row="1"/>
+    </Grid>
+</Window>
