@@ -32,7 +32,7 @@ namespace DocumentPublisher
         private String mMainFont = "NanumMyeongjoOTF";
         private String mPaperSize = "a4";
         private String mResourcePath = "C:\\Users\\cwss0\\source\\repos\\Git\\Xinnos_2021-Business-Record\\";
-        private String mTemplate = "";
+        private String mTemplate = ""; 
         
 
 
